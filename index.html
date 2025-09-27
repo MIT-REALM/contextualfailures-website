@@ -20,7 +20,7 @@
         <a href="#abstract" class="hover:underline">Abstract</a>
         <a href="#video" class="hover:underline">Video</a>
         <a href="#results" class="hover:underline">Results</a>
-        <a href="#code" class="hover:underline">Code & Data</a>
+        <a href="#code" class="hover:underline">Code</a>
         <a href="#bibtex" class="hover:underline">BibTeX</a>
         <a href="#team" class="hover:underline">Team</a>
         <a href="#faq" class="hover:underline">FAQ</a>
@@ -34,8 +34,8 @@
       <div class="py-12 md:py-20">
         <div class="text-center">
           <p class="text-sm uppercase tracking-widest text-neutral-500">Conference on Robot Learning • CoRL 2025</p>
-          <h1 class="mt-3 text-3xl sm:text-4xl md:text-6xl font-extrabold">Paper Title Goes Here</h1>
-          <p class="mt-4 text-lg text-neutral-600 max-w-3xl mx-auto">A short one‑liner that states the core idea/result. Keep it crisp, outcome‑oriented, and searchable (keywords!).</p>
+          <h1 class="mt-3 text-3xl sm:text-4xl md:text-6xl font-extrabold">Cost-aware Discovery of Contextual Failures using Bayesian Active Learning</h1>
+          <p class="mt-4 text-lg text-neutral-600 max-w-3xl mx-auto">An active learning strategy for contextual failure discovery using limited data with expert in loop</p>
           <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a class="px-4 py-2 rounded-xl bg-black text-white" href="#">PDF</a>
             <a class="px-4 py-2 rounded-xl bg-neutral-800 text-white" href="#">arXiv</a>
@@ -43,67 +43,144 @@
             <a class="px-4 py-2 rounded-xl bg-neutral-200" href="#data">Data</a>
             <a class="px-4 py-2 rounded-xl bg-neutral-200" href="#demo">Demo</a>
           </div>
-          <div class="mt-6 text-sm text-neutral-500">Anjali Parashar*, Co‑authors*, Advisor</div>
-          <img class="mt-10 rounded-2xl shadow" src="teaser.jpg" alt="Teaser figure" />
-          <p class="mt-2 text-xs text-neutral-500">Caption: a compact sentence describing the teaser image.</p>
+          <div class="mt-6 text-sm text-neutral-500">Anjali Parashar*, Joseph Zhang, Yinkge Li, Chuchu Fan</div>
+          <img class="mt-10 rounded-2xl shadow" src="static/images/overview.png" alt="Teaser figure" />
+          <p class="mt-2 text-xs text-neutral-500">Example of a contextual failure discovered using our method</p>
         </div>
       </div>
     </div>
   </section>
 
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <p class="mt-2 text-neutral-700">Failure examples for Diffusion Policy trained in Sim for Push-T task on UR3E.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Video 1 -->
+      <figure class="rounded-2xl overflow-hidden bg-neutral-100 shadow">
+        <video
+          class="w-full"
+          style="aspect-ratio: 12/14;"
+          controls
+          playsinline
+          preload="metadata"
+          poster="static/images/Mode_2.png">
+          <source src="static/videos/CORL_Mode2_PushT.mp4"  type="video/mp4"  />
+          Your browser doesn’t support HTML5 video.
+        </video>
+        <figcaption class="p-3 text-sm text-neutral-600">Discovered failure due to training data (Diffusion Policy: Push-T)</figcaption>
+      </figure>
+  
+      <!-- Video 2 -->
+      <figure class="rounded-2xl overflow-hidden bg-neutral-100 shadow">
+        <video
+          class="w-full"
+          style="aspect-ratio: 12/14;"
+          controls
+          playsinline
+          preload="metadata"
+          poster="static/images/Mode_3.png">
+          <source src="static/videos/CORL_Mode3_PushT.mp4"  type="video/mp4"  />
+          Your browser doesn’t support HTML5 video.
+        </video>
+        <figcaption class="p-3 text-sm text-neutral-600">Discovered failure due to joint limits (Diffusion Policy: Push-T)</figcaption>
+      </figure>
+  
+      <!-- Video 3 -->
+      <figure class="rounded-2xl overflow-hidden bg-neutral-100 shadow">
+        <video
+          class="w-full"
+          style="aspect-ratio:12/14;"
+          controls
+          playsinline
+          preload="metadata"
+          poster="static/images/Repair.png">
+          <source src="static/videos/Fail_and_Repair_PushT.mp4"  type="video/mp4"  />
+          Your browser doesn’t support HTML5 video.
+        </video>
+        <figcaption class="p-3 text-sm text-neutral-600">Failure used for repair by supplying better demonstrations</figcaption>
+      </figure>
+    </div>
+  </div>
+  
+  <!-- Results -->
+  <section id="results" class="border-t border-neutral-200 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <!--h2 class="text-2xl md:text-3xl font-bold">Results</h2-->
+      <p class="mt-2 text-neutral-700">Failure examples for YOLO self-driving object detection in CARLA.</p>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Example card -->
+        <figure class="bg-neutral-100 rounded-2xl p-3 shadow">
+          <img class="rounded-xl" src="static/images/light.png" alt="Result 1" />
+          <figcaption class="mt-2 text-sm text-neutral-600">Failure due to bad lighting</figcaption>
+        </figure>
+        <figure class="bg-neutral-100 rounded-2xl p-3 shadow">
+          <img class="rounded-xl" src="static/images/distance.png" alt="Result 2" />
+          <figcaption class="mt-2 text-sm text-neutral-600">Failure due to large distance</figcaption>
+        </figure>
+        <figure class="bg-neutral-100 rounded-2xl p-3 shadow">
+          <img class="rounded-xl" src="static/images/distance_and_light.png" alt="Result 3" />
+          <figcaption class="mt-2 text-sm text-neutral-600">Failure due to large distance and bad lighting</figcaption>
+        </figure>
+      </div>
+
+      
+    </div>
+  </section>
+  <!-- Put video.mp4 (H.264), video.webm (VP9/AV1), and captions.vtt in the same folder as this HTML -->
+  <!--div style="max-width: 800px; margin: 1rem auto;">
+    <video
+      controls
+      playsinline
+      preload="metadata"
+      style="width: 100%; height: auto; border-radius: 12px; display: block;"
+      poster="thumbnail.jpg"
+    >
+      
+      <source src="video.webm" type="video/webm" />
+      <source src="video.mp4"  type="video/mp4" />
+      
+      <track
+        src="captions.vtt"
+        kind="subtitles"
+        srclang="en"
+        label="English"
+        default
+      />
+    
+      Your browser doesn’t support HTML5 video.
+    </video>
+  </div-->
+
+  <!-- Video / Demo -->
+  <!--section id="video" class="border-t border-neutral-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      <h2 class="text-2xl md:text-3xl font-bold">Overview Video</h2>
+      <p class="mt-2 text-neutral-700">Embed your 3–6 minute project video or live demo below.</p>
+      <div class="mt-6 aspect-video rounded-2xl overflow-hidden shadow bg-black"-->
+        <!-- Replace YOUTUBE_ID -->
+        <!--iframe class="w-full h-full" src="https://www.youtube.com/embed/YOUTUBE_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section-->
   <!-- Abstract -->
   <section id="abstract" class="border-t border-neutral-200 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
       <h2 class="text-2xl md:text-3xl font-bold">Abstract</h2>
-      <p class="mt-4 text-neutral-700">Paste your final abstract here. Aim for ~150–200 words. Consider adding 3–5 bullet takeaways below for busy readers.</p>
-      <ul class="mt-4 list-disc pl-6 text-neutral-700">
+      <p class="mt-4 text-neutral-700">Ensuring the robustness of robotic systems is crucial for their de- ployment in safety-critical domains. Failure discovery, or falsification, is a widely used approach for evaluating robustness, with recent advancements fo- cusing on improving sample efficiency and generalization through probabilistic sampling techniques and learning-theoretic approaches. However, existing methods rely on explicitly defined analytical cost functions to characterize failures, often overlooking the underlying causes and diversity of discovered failure scenarios. In this work, we propose a novel failure discovery framework that integrates contextual reasoning in the falsification process, specifically tailored for high evaluation-cost applications. Our method incorporates expert-in-the-loop feedback to construct a probabilistic surrogate model of failures using Bayesian inference. This model is iteratively refined and leveraged to guide an active learning strategy that prioritizes the discovery of diverse failure cases. We empirically validate our approach across a range of tasks for high-cost contextual falsification in robotic manipulation and autonomous driving.</p>
+      <!--ul class="mt-4 list-disc pl-6 text-neutral-700">
         <li>Key takeaway 1.</li>
         <li>Key takeaway 2.</li>
         <li>Key takeaway 3.</li>
-      </ul>
+      </ul-->
     </div>
   </section>
 
-  <!-- Video / Demo -->
-  <section id="video" class="border-t border-neutral-200">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-      <h2 class="text-2xl md:text-3xl font-bold">Overview Video</h2>
-      <p class="mt-2 text-neutral-700">Embed your 3–6 minute project video or live demo below.</p>
-      <div class="mt-6 aspect-video rounded-2xl overflow-hidden shadow bg-black">
-        <!-- Replace YOUTUBE_ID -->
-        <iframe class="w-full h-full" src="https://www.youtube.com/embed/YOUTUBE_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Results -->
-  <section id="results" class="border-t border-neutral-200 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-      <h2 class="text-2xl md:text-3xl font-bold">Results</h2>
-      <p class="mt-2 text-neutral-700">Show quantitative tables, qualitative figures, ablations. Link to high‑res images.</p>
-      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Example card -->
-        <figure class="bg-neutral-100 rounded-2xl p-3 shadow">
-          <img class="rounded-xl" src="fig1.png" alt="Result 1" />
-          <figcaption class="mt-2 text-sm text-neutral-600">Figure 1. Short caption.</figcaption>
-        </figure>
-        <figure class="bg-neutral-100 rounded-2xl p-3 shadow">
-          <img class="rounded-xl" src="fig2.png" alt="Result 2" />
-          <figcaption class="mt-2 text-sm text-neutral-600">Figure 2. Short caption.</figcaption>
-        </figure>
-        <figure class="bg-neutral-100 rounded-2xl p-3 shadow">
-          <img class="rounded-xl" src="fig3.png" alt="Result 3" />
-          <figcaption class="mt-2 text-sm text-neutral-600">Figure 3. Short caption.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- Code & Data -->
   <section id="code" class="border-t border-neutral-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-      <h2 class="text-2xl md:text-3xl font-bold">Code & Data</h2>
-      <p class="mt-2 text-neutral-700">Reproduce our results with one command. We provide a Docker image / Conda env, pretrained weights, and scripts.</p>
+      <h2 class="text-2xl md:text-3xl font-bold">Code</h2>
+      <p class="mt-2 text-neutral-700">Reproduce our CARLA and Push-T (sim) results</p>
       <div class="mt-4 grid md:grid-cols-2 gap-4">
         <div class="bg-neutral-100 rounded-2xl p-4">
           <h3 class="font-semibold">Quickstart</h3>
@@ -112,18 +189,6 @@ cd REPO
 conda env create -f env.yml && conda activate corl25
 make demo  # or: python scripts/demo.py</code></pre>
         </div>
-        <div class="bg-neutral-100 rounded-2xl p-4">
-          <h3 class="font-semibold">Artifacts</h3>
-          <ul class="list-disc pl-6 text-sm">
-            <li><a class="underline" href="#">GitHub release v1.0 (paper)</a></li>
-            <li><a class="underline" href="#">Dataset / splits</a></li>
-            <li><a class="underline" href="#">Model weights</a></li>
-            <li><a class="underline" href="#">Colab / Codespaces</a></li>
-            <li><a class="underline" href="#">Docker image</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- BibTeX -->
@@ -147,27 +212,14 @@ make demo  # or: python scripts/demo.py</code></pre>
         <div class="bg-white rounded-2xl p-4 shadow">
           <div class="font-semibold">Anjali Parashar</div>
           <div class="text-sm text-neutral-600">MIT REALM Lab</div>
-          <div class="mt-2 text-sm"><a class="underline" href="#">Homepage</a> • <a class="underline" href="#">Scholar</a> • <a class="underline" href="#">Email</a></div>
+          <div class="mt-2 text-sm"><a class="underline" href="https://aeroastro.mit.edu/realm/team/anjali-parashar/">Homepage</a> • <a class="https://scholar.google.com/citations?user=XMr6ploAAAAJ&hl=en&oi=ao" href="#">Scholar</a> • <a class="underline" href="anjalip@mit.edu">Email</a></div>
         </div>
         <!-- Duplicate blocks for co-authors -->
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="border-t border-neutral-200 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-      <h2 class="text-2xl md:text-3xl font-bold">FAQ</h2>
-      <details class="mt-4 bg-neutral-100 rounded-2xl p-4">
-        <summary class="font-semibold cursor-pointer">What license do you use?</summary>
-        <p class="mt-2 text-neutral-700">MIT license for code; Creative Commons for the site assets unless otherwise noted.</p>
-      </details>
-      <details class="mt-3 bg-neutral-100 rounded-2xl p-4">
-        <summary class="font-semibold cursor-pointer">How do I reproduce Table 2?</summary>
-        <p class="mt-2 text-neutral-700">See <code>scripts/run_table2.sh</code> or the <code>repro/table2.yaml</code> experiment config.</p>
-      </details>
-    </div>
-  </section>
+  
 
   <!-- Footer -->
   <footer class="border-t border-neutral-200">
@@ -176,7 +228,6 @@ make demo  # or: python scripts/demo.py</code></pre>
       <div class="flex gap-4">
         <a class="underline" href="#">Paper</a>
         <a class="underline" href="#">Code</a>
-        <a class="underline" href="#">Dataset</a>
       </div>
     </div>
   </footer>
